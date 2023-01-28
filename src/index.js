@@ -91,7 +91,7 @@ function showFrequentPhrases() {
   // Loop through the repeated phrases and add them to the output container
   for (let phraseLength in frequentPhrases) {
     if (frequentPhrases[phraseLength].length > 0) {
-      var h = document.createElement("h3");
+      var h = document.createElement("h4");
       h.innerHTML = `Phrases with ${phraseLength} words:`;
       output.appendChild(h);
       for (var i = 0; i < frequentPhrases[phraseLength].length; i++) {
