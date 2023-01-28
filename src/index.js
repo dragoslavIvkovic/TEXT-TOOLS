@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const copyButton = document.getElementById("copy-button");
   const clearButton = document.getElementById("clear-button");
   const findPhrases = document.getElementById("phrase-button");
+  const latToCyr = document.getElementById("latToCyr-button");
 
   const updateCounts = () => {
     const wordCount = textArea.value.trim().split(/\s+/).length;
@@ -105,6 +106,88 @@ function showFrequentPhrases() {
   }
 }
 
+function cyrillicConvert() {
+  let latinChars = {
+    a: "а",
+    A: "А",
+    b: "б",
+    B: "Б",
+    c: "ц",
+    C: "Ц",
+    č: "ч",
+    Č: "Ч",
+    ć: "ћ",
+    Ć: "Ћ",
+    d: "д",
+    D: "Д",
+    dž: "џ",
+    Dž: "Џ",
+    đ: "ђ",
+    Đ: "Ђ",
+    e: "е",
+    E: "Е",
+    f: "ф",
+    F: "Ф",
+    g: "г",
+    G: "Г",
+    h: "х",
+    H: "Х",
+    i: "и",
+    I: "И",
+    j: "ј",
+    J: "Ј",
+    k: "к",
+    K: "К",
+    l: "л",
+    L: "Л",
+    lj: "љ",
+    Lj: "Љ",
+    m: "м",
+    M: "М",
+    n: "н",
+    N: "Н",
+    nj: "њ",
+    Nj: "Њ",
+    o: "о",
+    O: "О",
+    p: "п",
+    P: "П",
+    r: "р",
+    R: "Р",
+    s: "с",
+    S: "С",
+    š: "ш",
+    Š: "Ш",
+    t: "т",
+    T: "Т",
+    u: "у",
+    U: "У",
+    v: "в",
+    V: "В",
+    z: "з",
+    Z: "З",
+    ž: "ж",
+    Ž: "Ж",
+  };
+
+  let convertedText = "";
+  let text = textArea.value;
+
+  for (let i = 0; i < text.length; i++) {
+    let letter = text[i];
+    let nextLetter = text[i + 1];
+
+    if (latinChars[letter + nextLetter]) {
+      convertedText += latinChars[letter + nextLetter];
+      i++;
+    } else if (latinChars[letter]) {
+      convertedText += latinChars[letter];
+    } else {
+      convertedText += letter;
+    }
+  }
+  textArea.value = convertedText;
+}
 
 
 
@@ -116,4 +199,5 @@ function showFrequentPhrases() {
   copyButton.addEventListener("click", copyText);
   clearButton.addEventListener("click", removeText);
   findPhrases.addEventListener("click", showFrequentPhrases);
+  latToCyr.addEventListener("click", cyrillicConvert);
 });
