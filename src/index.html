@@ -8,25 +8,29 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-<div id="text-area-component">
-  <textarea id="text-area"></textarea>
-  <div id="buttons">
-    <button id="paste-button">Paste</button>
-    <button id="copy-button">Copy</button>
-    <button id="clear-button">Clear</button>
-    <button id="phrase-button">phrase-button</button>
-    <button id="latToCyr-button">latToCyr-button</button>
+
+  <section class='FlexContainer'>
+            <div id="output"></div>
+            <div id="text-area-and-buttons-container" >
+   <div id="counters">
+      <div id="output-count" >
+        <p id="word-count"></p>
+        <p id="character-count"></p>
+        <p id="sentence-count"></p>
+      </div>
+    </div>
+    <textarea id="text-area"></textarea>
   </div>
-  <p id="word-count"></p>
-  <p id="character-count"></p>
-  <p id="sentence-count"></p>
- <div id="output"></div>
-
-
-</div>
-
-
+  <div id="buttons" >
+      <button id="paste-button">Paste</button>
+      <button id="copy-button">Copy</button>
+      <button id="clear-button">Clear</button>
+      <button id="phrase-button">phrase-button</button>
+      <button id="latToCyr-button">latToCyr-button</button>
+  </div></div>
+        </section>
  
+
 
 	<script type="module" src="index.js"></script>
   </body>
