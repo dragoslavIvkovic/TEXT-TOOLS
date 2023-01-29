@@ -4,8 +4,14 @@
   --bg2-color: #F3F2F1;
   --text-color: #FB3640;
 }
+ 
+ 
+  @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,400;0,800;1,400;1,800&family=Oswald:wght@400;500;600;700&family=Roboto+Slab:wght@400;700;800;900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+ 
 
 body {
+ font-family: 'Lato', sans-serif;
+ 
   margin: 1rem;
   padding: 1rem;
   min-height: 80vh;
@@ -14,6 +20,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 .FlexContainer {
@@ -36,7 +43,6 @@ body {
 #text-area-and-buttons-container {
   position: sticky;
   top: 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,6 +58,9 @@ body {
 }
 #counters p {
   margin-inline: 1vw;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+
 }
 #output-count {
   display: flex;
@@ -65,7 +74,9 @@ body {
   width: 20vw;
 }
 #output h4{
-  color:  var( --text-color);
+ font-family: 'Lato', sans-serif;
+ font-weight: 900;
+ text-transform: capitalize;
 }
 #buttons {
   position: sticky;
@@ -75,6 +86,9 @@ body {
 }
 
 textarea {
+ 
+font-family: 'Open Sans', sans-serif;
+ 
   width: 38vw;
   height: 30vh;
   padding: 2em;
@@ -88,5 +102,5 @@ button {
   border-radius: 10px;
   padding: 15px;
   min-height: 30px;
-  min-width: 120px;
+  min-width:5vw;
 }
