@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const clearButton = document.getElementById("clear-button");
   const findPhrases = document.getElementById("phrase-button");
   const latToCyr = document.getElementById("latToCyr-button");
+  const correctGrammar = document.getElementById("correctGrammar-button");
 
   const updateCounts = () => {
     const wordCount = textArea.value.trim().split(/\s+/).length;
@@ -189,8 +190,19 @@ function cyrillicConvert() {
   textArea.value = convertedText;
 }
 
-
-
+function formatText() {
+  let text = textArea.value;
+  text = text.replace(
+    /([,\.\?\!\:\;\=\-\+\*\$\%\&\(\)])([A-Za-z\u0400-\u04FF])/g,
+    "$1 $2"
+  ); // Add a space after punctuation
+  text = text.replace(/\s+/g, " "); // Turn many spaces into just one
+  text = text.replace(/^(.)|([.!?]\s*)(.)/g, (match, p1, p2, p3) => {
+    if (p1) return p1.toUpperCase();
+    if (p3) return p2 + p3.toUpperCase();
+  }); // Capitalize the beginning of a new sentence
+  textArea.value = text;
+}
 
 
   textArea.addEventListener("input", updateCounts);
@@ -200,4 +212,5 @@ function cyrillicConvert() {
   clearButton.addEventListener("click", removeText);
   findPhrases.addEventListener("click", showFrequentPhrases);
   latToCyr.addEventListener("click", cyrillicConvert);
+  correctGrammar.addEventListener("click", formatText);
 });
