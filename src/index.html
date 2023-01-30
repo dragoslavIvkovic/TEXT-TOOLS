@@ -8,31 +8,33 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-
-  <section class='FlexContainer'>
-            <div id="output"></div>
-            <div id="text-area-and-buttons-container" >
-   <div id="counters">
-      <div id="output-count" >
-        <p id="word-count"></p>
-        <p id="character-count"></p>
-        <p id="sentence-count"></p>
-      </div>
-    </div>
-    <textarea id="text-area"></textarea>
-  </div>
-  <div id="buttons" >
+<section class="layout">
+  <div class="header">1</div>
+   <div id="output" class="leftSide">Frequent Phrases</div>
+   <textarea class="body" id="text-area"></textarea>
+    <div id="rightSide" >
       <button id="paste-button">Paste</button>
       <button id="copy-button">Copy</button>
       <button id="clear-button">Clear</button>
       <button id="phrase-button">Repeating Phrases</button>
       <button id="latToCyr-button">Latin to Cyrillic</button>
       <button id="correctGrammar-button">Correct Grammar</button>
-  </div></div>
-        </section>
- 
+  </div>
+   <div id="footer"> 
+        <p id="word-count">Word Count: 0</p>
+        <p id="character-count">Character Count: 0</p>
+        <p id="sentence-count">Sentence Count: 0</p>
+    </div>
+  </div>
+</section>
 
 
-	<script type="module" src="index.js"></script>
+
+
+
+  
+
+
+  <script type="module" src="index.js"></script>
   </body>
 </html>
