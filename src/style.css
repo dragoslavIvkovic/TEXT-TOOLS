@@ -1,8 +1,14 @@
 :root {
-  --bg-color: #2b579a;
-  --btn-color: #bcc1c5;
-  --bg2-color: #f3f2f1;
+  --blue-bg: #2b579a;
+  /* --blue-dark: #0d3976; */
+  --blue: #1c75e6;
+  /* --blue-light: #6db0ff; */
+  /* --gray-dark: #bcbcbc; */
+  --gray-mid: #f3f2f1;
+  /* --gray-light: #f8f8f8; */
+  --gray-darker: #a1acb5;
   --text-color: #fb3640;
+  --box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,400;0,800;1,400;1,800&family=Oswald:wght@400;500;600;700&family=Roboto+Slab:wght@400;700;800;900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
@@ -11,99 +17,93 @@ body {
   font-family: "Lato", sans-serif;
   margin: 0;
   font-size: 1rem;
-  padding: 0;
+  padding: 2rem;
   /* min-height: 80vh; */
   box-sizing: border-box;
-  background-color: var(--bg-color);
+  background-color: var(--blue-bg);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.FlexContainer {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: center;
-  width: 80vw;
-  height: 60vh;
-  overflow: hidden;
-  flex-direction: row;
+.layout {
+  width: 50vw;
+  height: 80vh;
+  display: grid;
+  border-radius: 5px;
+  background-color: var(--gray-mid);
+  padding: 2rem;
+  grid:
+    "header header header" auto
+    "leftSide body rightSide" 1fr
+    "footer footer footer" auto
+    / auto 1fr auto;
+  gap: 8px;
 }
 
-.FlexContainer div {
-  margin: 2em;
-  background-color: var(--btn-color);
+.header {
+  grid-area: header;
 }
-
-#text-area-and-buttons-container {
-  position: sticky;
-  top: 0;
-  height: 60vh;
-
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#counters {
-  margin: 0;
-}
-#counters p {
-  margin-inline: 1vw;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 800;
-}
-#output-count {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0;
-}
-
-#output {
-  overflow-y: scroll;
+.leftSide {
+  grid-area: leftSide;
+  width: 10vw;
+  background-color: white;
   padding: 2em;
-  width: 15%;
-  height: 60vh;
+  overflow-y: scroll;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
 }
-#output h4 {
-  font-family: "Lato", sans-serif;
-  font-weight: 900;
-  text-transform: capitalize;
+.body {
+  grid-area: body;
 }
-#buttons {
-  position: sticky;
-  top: 0;
-  width: 10%;
-  display: flex;
-  flex-direction: column;
+#rightSide {
+  grid-area: rightSide;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  gap: 1px 1px;
+  grid-auto-flow: row;
+}
+#footer {
+  grid-area: footer;
+  background-color: var(--gray-mid);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px 1px;
+  justify-items: center;
+}
+
+#footer p {
+  padding: 1em 2em;
+  border: 1px solid var(--gray-darker);
+  box-shadow: var(--box-shadow);
 }
 
 textarea {
-  font-family: "Open Sans", sans-serif;
-  width: 25vw;
-  height: 60vh;
-
   padding: 2em;
+  box-shadow: var(--box-shadow);
+  border: none;
+  overflow: auto;
+  outline: none;
+  border-radius: 5px;
+  resize: none; /*remove the resize handle on the bottom right*/
 }
 
-#text-area:focus {
-  outline: none !important;
-  border: 1px solid var(--btn-color);
-  box-shadow: 0 0 10px var(--btn-color);
-}
 button {
-  margin: 1em;
-  background-color: var(--bg-color);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  padding: 15px;
-  word-break: break-all;
-  min-height: 30px;
-  min-width: 5vw;
+  align-items: center;
+  background: var(--gray-mid);
+  border: 0 solid var(--gray-darker);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  overflow-wrap: break-word;
+  text-decoration: none;
+  width: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
