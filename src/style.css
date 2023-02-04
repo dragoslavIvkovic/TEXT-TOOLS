@@ -31,7 +31,7 @@ body {
   height: 80vh;
   display: grid;
   border-radius: 5px;
-  background-color: var(--gray-mid);
+  background-color:var(--gray-mid);
   padding: 2rem;
   grid:
     "header header header" auto
@@ -47,7 +47,7 @@ body {
 .leftSide {
   grid-area: leftSide;
   width: 10vw;
-  background-color: white;
+  background-color:white;
   padding: 2em;
   overflow-y: scroll;
   border-radius: 5px;
@@ -66,7 +66,7 @@ body {
 }
 #footer {
   grid-area: footer;
-  background-color: var(--gray-mid);
+ background-color: var(--gray-mid);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1px 1px;
@@ -75,7 +75,7 @@ body {
 
 #footer p {
   padding: 1em 2em;
-  border: 1px solid var(--gray-darker);
+  border:none;
   box-shadow: var(--box-shadow);
 }
 
@@ -83,27 +83,28 @@ textarea {
   padding: 2em;
   box-shadow: var(--box-shadow);
   border: none;
-  overflow: auto;
-  outline: none;
-  border-radius: 5px;
-  resize: none; /*remove the resize handle on the bottom right*/
+    overflow: auto;
+    outline: none;
+border-radius: 5px;
+    resize: none; /*remove the resize handle on the bottom right*/
 }
 
 button {
   align-items: center;
   background: var(--gray-mid);
   border: 0 solid var(--gray-darker);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
   display: inline-flex;
   justify-content: center;
   overflow-wrap: break-word;
   text-decoration: none;
   width: auto;
+  height: 4em;
   border-radius: 8px;
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+ 
